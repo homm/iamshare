@@ -1,5 +1,16 @@
 {% extends "base.html" %}
 
 {% block body %}
-<img src="{{ image.image }}">
+	<h2>Image «{{ image.image.info.filename }}»</h2>
+
+	<img align="left" src="{{ image.image.cdn_url }}-/stretch/off/-/resize/500x/">
+
+	<div class="float-info">
+		<h3>Info</h3>
+		Size: {{ image.image.info.size|filesizeformat }}<br>
+		Uploaded: {{ image.image.info.datetime_uploaded|slice:":10" }}<br>
+
+		<h3>Full link</h3>
+		<a href="{{ image.image.cdn_url }}">{{ image.image.cdn_url }}</a>
+	</div>
 {% endblock %}
