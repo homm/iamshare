@@ -6,7 +6,7 @@ from django.db import models
 
 
 class Image(models.Model):
-    slug = models.SlugField(max_length=10, primary_key=True)
+    slug = models.SlugField(max_length=10, primary_key=True, blank=True)
     image = ImageField(manual_crop="")
 
     def __repr__(self):

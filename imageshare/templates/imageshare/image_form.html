@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+
+{% block head %}
+	{{ form.media }}
+{% endblock %}
+
+
+{% block body %}
+	<div class="center">
+		<form action="." method="post">
+			<p>Please, select an image:</p>
+			<p>{{ form.image }}</p>
+			<p><input type="submit" value="send"></p>
+			{{ form.errors }}
+		</form>
+	</div>
+{% endblock %}
