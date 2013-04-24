@@ -11,11 +11,24 @@
 
 {% block body %}
 	<div class="center">
-		<form action="." method="post">
+		<form action="." method="post" id="upload-form">
 			<p>Please, select an image:</p>
 			<p>{{ form.image }}</p>
-			<p><input type="submit" value="send"></p>
 			{{ form.errors }}
 		</form>
+		<script>
+		uploadcare.start();
+		(function() {
+			var widget = uploadcare.Widget('#id_image');
+			widget.openDialog();
+			widget.onChange(function(file) {
+				if (file) {
+					var form = document.getElementById('upload-form');
+					form.submit();
+					form.style.display = 'none';
+				}
+			});
+		})();
+		</script>
 	</div>
 {% endblock %}
