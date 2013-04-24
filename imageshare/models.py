@@ -16,3 +16,7 @@ class Image(models.Model):
         if not self.slug:
             self.slug = ''.join(random.sample(string.ascii_lowercase, 6))
         super(Image, self).save(*args, **kwargs)
+
+    @models.permalink
+    def get_absolute_url(self):
+        return 'detail', (), {'pk': self.pk}
