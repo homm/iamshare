@@ -1,1 +1,1 @@
-web: python manage.py syncdb --noinput; gunicorn upload_test.wsgi
+web: python manage.py syncdb --noinput; newrelic-admin run-program gunicorn upload_test.wsgi
