@@ -1,17 +1,19 @@
 {% extends "base.html" %}
 
 {% block body %}
-	<h2>Image «{{ image.image.info.filename }}»</h2>
+	<h2>Uploaded Image</h2>
 
-	<img align="left" src="{{ image.image.cdn_url }}-/stretch/off/-/resize/260x/">
+	<a href="{{ image.image.cdn_url }}">
+		<img align="left" src="{{ image.image.cdn_url }}-/stretch/off/-/resize/260x/"></a>
 
 	<div class="float-info">
-		<h3>Info</h3>
-		Size: {{ image.image.info.size|filesizeformat }}<br>
-		Uploaded: {{ image.image.info.datetime_uploaded|slice:":10" }}<br>
+		<p>
+			<b>Filename</b>: {{ image.image.info.filename }}<br>
+			<b>Uploaded</b>: {{ image.image.info.datetime_uploaded|slice:":10" }}<br>
+			<b>Original size</b>: {{ image.image.info.size|filesizeformat }}<br>
+		</p>
 
-		<h3>Full link</h3>
-		<a href="{{ image.image.cdn_url }}">{{ image.image.cdn_url }}</a>
+		<p><a href="{{ image.image.cdn_url }}">Full link</a></p>
 	</div>
 	<br clear="left">
 	<p><a href="{% url 'index' %}">Upload another image</a></p>
