@@ -3,7 +3,7 @@
 {% block body %}
 	<h2>Image «{{ image.image.info.filename }}»</h2>
 
-	<img align="left" src="{{ image.image.cdn_url }}-/stretch/off/-/resize/500x/">
+	<img align="left" src="{{ image.image.cdn_url }}-/stretch/off/-/resize/260x/">
 
 	<div class="float-info">
 		<h3>Info</h3>
@@ -13,4 +13,6 @@
 		<h3>Full link</h3>
 		<a href="{{ image.image.cdn_url }}">{{ image.image.cdn_url }}</a>
 	</div>
+	<br clear="left">
+	<p><a href="{% url 'index' %}">Upload another image</a></p>
 {% endblock %}
