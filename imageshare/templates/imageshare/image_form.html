@@ -18,8 +18,9 @@
 			{{ form.errors }}
 		</form>
 		<script>
-		uploadcare.start();
 		(function() {
+			uploadcare.start();
+
 			var widget = uploadcare.Widget('#id_image');
 			widget.openDialog();
 			widget.onChange(function(file) {
