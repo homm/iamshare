@@ -12,6 +12,7 @@ MANAGERS = ADMINS
 UPLOADCARE = {
     'pub_key': 'demopublickey',
     'secret': 'demoprivatekey',
+    'widget_version': '0.8.1.1',
 }
 
 DATABASES = {
