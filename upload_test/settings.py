@@ -12,7 +12,6 @@ MANAGERS = ADMINS
 UPLOADCARE = {
     'pub_key': 'demopublickey',
     'secret': 'demoprivatekey',
-    'widget_version': '0.8.1.2',
 }
 
 # Parse database configuration from $DATABASE_URL

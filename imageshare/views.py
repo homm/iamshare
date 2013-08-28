@@ -14,12 +14,12 @@ class ImageView(DetailView):
     model = Image
 
     def get_object(self):
-        object = super(ImageView, self).get_object()
+        obj = super(ImageView, self).get_object()
         try:
-            if object.image.is_removed:
+            if obj.image.is_removed():
                 raise ValueError('File was deleted.')
         except (InvalidRequestError, ValueError):
-            object.delete()
+            obj.delete()
             raise Http404
 
-        return object
+        return obj
