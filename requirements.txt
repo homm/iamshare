@@ -1,6 +1,6 @@
 Django==1.5.1
 gunicorn==0.17.4
-pyuploadcare==1.2.1
+pyuploadcare==1.2.8
 requests==1.2.0
 newrelic==1.11.0.55
 dj_database_url==0.2.1
